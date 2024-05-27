@@ -1,10 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
+
 <head>
-    <script src="../App.js" type="text/javascript" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gene Villacian</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <nav>
+        <ul>
+            <li><a class="nav-links" href="#home">Home</a></li>
+            <li><a class="nav-links" href="#about-me">About Me</a></li>
+            <li><a class="nav-links" href="#projects">Projects</a></li>
+            <li><a class="nav-links" href="#coding-challenges">Coding Challenges</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div id="app">
+            <h1>
+                Single Page Application Using<br />
+                HTML, CSS & JavaScript
+            </h1>
+            <div class="switch-nav">
+                <div class="switch-div">
+                    <a href="#" onclick="changeContent('home')">
+                        Home
+                    </a>
+                    <a href="#" onclick="changeContent('about')">
+                        About
+                    </a>
+                    <a href="#" onclick="changeContent('contact')">
+                        Contact
+                    </a>
+                </div>
+            </div>
+            <div id="content">
+
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/geeksforgeeks-12.png">
+                <h2>Welcome to Geeks for Geeks</h2>
+                <p>
+                    Geeks for Geeks is a portal for computer
+                    science enthusiasts, providing a wide range of
+                    tutorials, articles, and resources.
+                </p>
+                <p>
+                    Visit the GeeksforGeeks portal
+                    <a href="https://www.geeksforgeeks.org/" target="_blank">
+                        here
+                    </a>.
+                </p>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
 </body>
+
 </html>

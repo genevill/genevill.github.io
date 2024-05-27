@@ -1,71 +1,17 @@
-import './App.css';
-import { CalculatorApp } from './Calculator.js';
-import { TimerApp } from './Timer.js';
-import { DrumApp } from './DrumMachine.js';
-import { QuoteApp } from './Quote.js';
-import { MarkdownApp } from './Markdown.js';
-import { useState } from 'react';
-
-function App() {
-
-    const [openedApp, setOpenedApp] = useState(0);
-
-    //----App----------------------------------------------------------------------
-
-    const AppButton = props => {
-        return (<button class="switcher-button" onMouseDown={() => {
-            if (props.text == "Pomodoro Timer") {
-                setOpenedApp(0);
-            }
-            if (props.text == "Calculator") {
-                setOpenedApp(1);
-            }
-            if (props.text == "Drum App") {
-                setOpenedApp(2);
-            }
-            if (props.text == "Markdown App") {
-                setOpenedApp(3);
-            }
-            if (props.text == "Quote App") {
-                setOpenedApp(4);
-            }
-        }
-        }> {props.text}</button >)
-    }
-
-    const Switcher = props => {
-        if (openedApp == 0) {
-            return (<TimerApp />);
-        }
-        if (openedApp == 1) {
-            return (<CalculatorApp />);
-        }
-        if (openedApp == 2) {
-            return (<DrumApp />);
-        }
-        if (openedApp == 3) {
-            return (<MarkdownApp />);
-        }
-        if (openedApp == 4) {
-            return (<QuoteApp />);
-        }
-    }
-
-  return (
-  <div class="app">
+<div class="app">
     <div class="header">
-      <header id="header">
+        <header id="header">
         <nav class="navbar" id="navbar">
-          <div class="navborders">
+            <div class="navborders">
             <a class="nav-links" href="#about-me">About Me</a>
             <a class="nav-links" href="#projects">Projects</a>
             <a class="nav-links" href="#coding-challenges">Coding Challenges</a>
-          </div>
-      </nav>
-      </header>
+            </div>
+        </nav>
+        </header>
     </div>
     <div class="main">
-      <main id="main">
+        <main id="main">
         <section id="background">
         </section>
         <section class="center" id="about-me">
@@ -91,12 +37,8 @@ function App() {
         </section>
         <section class="center" id="coding-challenges">
         </section>
-      </main>
+        </main>
     </div>
     <footer id="footer">
     </footer>
-  </div>
- );
-}
-
-export default App;
+</div>
