@@ -1,7 +1,4 @@
-import './Calculator.css';
-
 //---Calculator--------------------------------------------------------
-
 var displayString = "0";
 var totalString = "";
 var allNumbers = [];
@@ -14,8 +11,8 @@ var buttonNames = [
     "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "-", "x", "/", ".", "AC", "="
 ]
 
-const Button = props => {
-    return (<button class="calc-button calc-buttonpadding calc-unselectable" id={idNames[buttonNames.indexOf(props.text)]} onClick={() => {
+function Button() {
+    /*return (<button class="calc-button calc-buttonpadding calc-unselectable" id={idNames[buttonNames.indexOf(props.text)]} onClick={() => {
         if (/[0-9]/.test(props.text)) {
             if (/\-0/.test(displayString)) {
                 displayString = displayString.replace("0", "");
@@ -61,7 +58,7 @@ const Button = props => {
                 totalString += displayString + props.text;
             }
             displayString = "0";
-            allNumbers = totalString.match(/[0-9]+\.?[0-9]*/g);
+            allNumbers = totalString.match(/[0-9]+\.?[0-9]*g);//should be star/g
             allOperands = totalString.match(/[\+\-/x=]+/g);
             //allNumbers.forEach( current => console.log(current) );
             //allOperands.forEach( current => console.log(current) );
@@ -90,7 +87,8 @@ const Button = props => {
         }
         document.getElementById("calc-display").innerHTML = displayString;
         //console.log(document.getElementById("display").innerHTML);
-    }} >{props.text}</button>)
+    }} > { props.text }</button >)
+    */
 }
 
 function Math(operation, num1, num2) {
@@ -113,10 +111,6 @@ function Math(operation, num1, num2) {
     return total;
 }
 
-const Display = props => {
-    return (<p class="calc-display-text" id="calc-display">{props.text}</p>)
-}
-
 function UpdateDisplayTotal() {
     if (totalString.length >= 1 && document.getElementById("calc-totaldisplay") != null) {
         document.getElementById("calc-totaldisplay").style.gridRowStart = 1;
@@ -126,34 +120,32 @@ function UpdateDisplayTotal() {
     document.getElementById("calc-totalString").innerHTML = totalString;
 }
 
-const DisplayTotal = () => {
-    return (<p class="calc-totalString" id="calc-totalString">{totalString}</p>)
+function DisplayTotal() {
+    //return (<p class="calc-totalString" id="calc-totalString">{totalString}</p>)
 }
 
-export const CalculatorApp = () => {
-    return (
+document.getElementById('calculator').innerHTML = `
         <div class="calc-outer-box">
             <div class="calc-grid-container calc-box">
-                <div class="calc-totaldisplay" id="calc-totaldisplay"><DisplayTotal /></div>
-                <div class="calc-itemdisplay"><Display text="0" /></div>
-                <div class="calc-itemac"><Button text="AC" /></div>
-                <div class="calc-itemdivide"><Button text="/" /></div>
-                <div class="calc-itemtimes"><Button text="x" /></div>
-                <div class="calc-itemminus"><Button text="-" /></div>
-                <div class="calc-itemplus"><Button text="+" /></div>
-                <div class="calc-itemequals"><Button text="=" /></div>
-                <div class="calc-itemdot"><Button text="." /></div>
-                <div class="calc-item0"><Button text="0" /></div>
-                <div class="calc-item1"><Button text="1" /></div>
-                <div class="calc-item2"><Button text="2" /></div>
-                <div class="calc-item3"><Button text="3" /></div>
-                <div class="calc-item4"><Button text="4" /></div>
-                <div class="calc-item5"><Button text="5" /></div>
-                <div class="calc-item6"><Button text="6" /></div>
-                <div class="calc-item7"><Button text="7" /></div>
-                <div class="calc-item8"><Button text="8" /></div>
-                <div class="calc-item9"><Button text="9" /></div>
+                <div class="calc-totaldisplay" id="calc-totaldisplay"><p class="calc-totalString" id="calc-totalString">0</p></div>
+                <div class="calc-itemdisplay"><p class="calc-display-text" id="calc-display">0</p></div>
+                <div class="calc-itemac"><button id="AC" class="calc-button calc-buttonpadding calc-unselectable" />AC</div>
+                <div class="calc-itemdivide"><button id="/" class="calc-button calc-buttonpadding calc-unselectable" />/</div>
+                <div class="calc-itemtimes"><button id="x" class="calc-button calc-buttonpadding calc-unselectable" />x</div>
+                <div class="calc-itemminus"><button id="-" class="calc-button calc-buttonpadding calc-unselectable" />-</div>
+                <div class="calc-itemplus"><button id="+" class="calc-button calc-buttonpadding calc-unselectable" />+</div>
+                <div class="calc-itemequals"><button id="=" class="calc-button calc-buttonpadding calc-unselectable" />=</div>
+                <div class="calc-itemdot"><button id="." class="calc-button calc-buttonpadding calc-unselectable" />.</div>
+                <div class="calc-item0"><button id="0" class="calc-button calc-buttonpadding calc-unselectable" />0</div>
+                <div class="calc-item1"><button id="1" class="calc-button calc-buttonpadding calc-unselectable" />1</div>
+                <div class="calc-item2"><button id="2" class="calc-button calc-buttonpadding calc-unselectable" />2</div>
+                <div class="calc-item3"><button id="3" class="calc-button calc-buttonpadding calc-unselectable" />3</div>
+                <div class="calc-item4"><button id="4" class="calc-button calc-buttonpadding calc-unselectable" />4</div>
+                <div class="calc-item5"><button id="5" class="calc-button calc-buttonpadding calc-unselectable" />5</div>
+                <div class="calc-item6"><button id="6" class="calc-button calc-buttonpadding calc-unselectable" />6</div>
+                <div class="calc-item7"><button id="7" class="calc-button calc-buttonpadding calc-unselectable" />7</div>
+                <div class="calc-item8"><button id="8" class="calc-button calc-buttonpadding calc-unselectable" />8</div>
+                <div class="calc-item9"><button id="9" class="calc-button calc-buttonpadding calc-unselectable" />9</div>
             </div>
         </div>
-    );
-}
+    `;

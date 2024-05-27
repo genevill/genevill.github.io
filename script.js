@@ -2,19 +2,17 @@ function changeContent(page) {
 	var contentDiv = document.getElementById('content');
 
 	switch (page) {
+		case 'calculator':
+			myFunction();
+			break;
 		case 'home':
 			contentDiv.innerHTML = `
-				<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/geeksforgeeks-12.png">
-				<h2>
-					Welcome to the Home Page!
-				</h2>
+				<h2>Home</h2>
 				<p>
-					This is the main page of our SPA.
+					A bunch of text.
 				</p>
 				<p>
-					Explore the different sections using
-					the navigation menu.
+					More text.
 				</p>
 			`;
 			break;
@@ -55,5 +53,14 @@ function changeContent(page) {
 
 		default:
 			contentDiv.innerHTML = '<h2>Page not found!</h2>';
+	}
+}
+
+function myFunction() {
+	var x = document.getElementById("calculator");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
 	}
 }
