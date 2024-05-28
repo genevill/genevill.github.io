@@ -3,18 +3,10 @@ function changeContent(page) {
 
 	switch (page) {
 		case 'calculator':
-			myFunction();
+			changeProject('calculator');
 			break;
-		case 'home':
-			contentDiv.innerHTML = `
-				<h2>Home</h2>
-				<p>
-					A bunch of text.
-				</p>
-				<p>
-					More text.
-				</p>
-			`;
+		case 'drummachine':
+			changeProject('drummachine');
 			break;
 		case 'about':
 			contentDiv.innerHTML = `
@@ -56,11 +48,16 @@ function changeContent(page) {
 	}
 }
 
-function myFunction() {
-	var x = document.getElementById("calculator");
-	if (x.style.display === "none") {
-		x.style.display = "block";
-	} else {
-		x.style.display = "none";
+function changeProject(currentItem) {
+	var calculator = document.getElementById("calculator");
+	var drummachine = document.getElementById("drummachine");
+
+	if (currentItem == "calculator") {
+		calculator.style.display = "flex";
+		drummachine.style.display = "none";
+	}
+	if (currentItem == "drummachine") {
+		calculator.style.display = "none";
+		drummachine.style.display = "flex";
 	}
 }

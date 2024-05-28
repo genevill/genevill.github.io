@@ -106,5 +106,15 @@ li a:hover {
 }
 
 #calculator {
-    display: block;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#drummachine {
+    margin: auto;
+    display: none;
+    justify-content: center;
+    align-items: center;
 }
