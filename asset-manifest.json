@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/genevill.com/static/css/main.5b7c895c.css",
-    "main.js": "/genevill.com/static/js/main.d4e881ad.js",
-    "static/js/453.91df4c7e.chunk.js": "/genevill.com/static/js/453.91df4c7e.chunk.js",
-    "index.html": "/genevill.com/index.html",
-    "main.5b7c895c.css.map": "/genevill.com/static/css/main.5b7c895c.css.map",
-    "main.d4e881ad.js.map": "/genevill.com/static/js/main.d4e881ad.js.map",
-    "453.91df4c7e.chunk.js.map": "/genevill.com/static/js/453.91df4c7e.chunk.js.map"
+    "main.css": "/static/css/main.5b7c895c.css",
+    "main.js": "/static/js/main.3a7fc688.js",
+    "static/js/453.91df4c7e.chunk.js": "/static/js/453.91df4c7e.chunk.js",
+    "index.html": "/index.html",
+    "main.5b7c895c.css.map": "/static/css/main.5b7c895c.css.map",
+    "main.3a7fc688.js.map": "/static/js/main.3a7fc688.js.map",
+    "453.91df4c7e.chunk.js.map": "/static/js/453.91df4c7e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5b7c895c.css",
-    "static/js/main.d4e881ad.js"
+    "static/js/main.3a7fc688.js"
   ]
 }
